@@ -1,13 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import App from './components/App';
-
-function CreateNav() {
-  return (
-    <nav>Hello World</nav>
-  )
-}
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   ReactDOM.render(
@@ -19,5 +13,9 @@ function CreateNav() {
 // })
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(< CreateNav />, document.querySelector('#root'))
+  ReactDOM.render(
+    <Router>
+      <App />
+    </Router>,
+    document.querySelector('#root'))
 })

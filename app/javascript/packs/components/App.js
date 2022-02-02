@@ -1,7 +1,16 @@
-// import React from 'react';
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import List from "./List";
+import Create from "./Create";
 
-// ReactDom.render(
-//   <div>Hello World</div>
-// )
 
-// export default 'App';
+export default function App() {
+  return (
+    <>
+      <Routes>
+        <Route path="/tasks" element={<List />} />
+        <Route path="/tasks/new" element={<Create />} />
+      </Routes>
+    </>
+  )
+}
