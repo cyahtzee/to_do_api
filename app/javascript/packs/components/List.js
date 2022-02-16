@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import RadarComp from './RadarComp';
+import Split from 'react-split';
+import Editor from './Editor';
 
 export default function List() {
   const [tasks, setTasks] = React.useState(JSON.parse(localStorage.getItem("tasks")) || []);
@@ -14,11 +16,18 @@ export default function List() {
   return (
     <div>
       <h1>Hello from List</h1>
-      <ul>
-        {tasks.map(task => <li>{task.id}</li>)}
-      </ul>
       <Link to="/tasks/new">New Task</Link>
-      <RadarComp />
+      <Split
+        sizes={[30, 70]}
+        direction="horizontal"
+        style={{ display: 'flex' }}
+
+      >
+        <ul>
+          {tasks.map(task => <li>{task.id}</li>)}
+        </ul>
+        <Editor />
+      </Split>
     </div>
   )
 }
