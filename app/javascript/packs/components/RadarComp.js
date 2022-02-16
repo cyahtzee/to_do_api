@@ -33,5 +33,9 @@ export const data = {
 };
 
 export default function RadarComp() {
-  return <Radar data={data} />;
+  return <Radar
+    height={200}
+    width={200}
+    data={data}
+  />;
 }

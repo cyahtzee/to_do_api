@@ -1,6 +1,6 @@
 class Api::V1::TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = "Hi, I'm a task"
     render json: @tasks
   end
 
